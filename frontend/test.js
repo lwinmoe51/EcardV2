@@ -1,7 +1,7 @@
 // Example data for login
 const loginData = {
     username: "testuser", // or username
-    password: "123456",
+    password: "344",
 };
 
 fetch("http://localhost:5000/api/login", {
@@ -15,8 +15,8 @@ fetch("http://localhost:5000/api/login", {
         console.log(response);
         if (!response.ok) {
             // Handle HTTP errors (e.g., 401 Unauthorized, 400 Bad Request)
-            return response.json().then((err) => {
-                throw new Error(err.message || "Login failed");
+            return response.json().then((error) => {
+                throw new Error(error.message || "Login failed");
             });
         }
         return response.json();
