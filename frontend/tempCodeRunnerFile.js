@@ -1,6 +1,6 @@
 const bodyJSON = {
-    username: "lwinmoe",
-    password: "123456",
+    username: "",
+    password: "",
 };
 
 fetch("http://localhost:5000/api/signup", {
@@ -10,12 +10,9 @@ fetch("http://localhost:5000/api/signup", {
     },
     body: JSON.stringify(bodyJSON),
 })
-    .then((response) => {
-        console.log(response);
-        return response.json();
-    })
+    .then((response) => response.json()) // <-- Parse JSON body
     .then((data) => {
-        console.log(data);
+        console.log(data); // <-- This will show the error object!
     })
     .catch((error) => {
         console.error(error.message);
